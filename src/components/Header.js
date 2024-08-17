@@ -1,31 +1,41 @@
 import logo from '../logo.svg';
+import icon from '../assets/cartIcon.svg';
+import userIcon from '../assets/userIcon.svg';
 import { Link } from 'react-router-dom';
 const Header = () => {
 
   return (
-    <div className="grid grid-flow-col p-5 m-2 shadow-lg">
-        <div className='flex col-span-10'>
+    <div className="flex justify-between items-center p-5 shadow-lg fixed top-0 left-0 right-0 mb-4 bg-white">
+        <div className=''>
         <Link to="/">
             <img 
             className='h-8 mx-3'
             alt='logo'
             src={logo}
-            //src='https://image.winudf.com/v2/image/Y29tLnZpZGVvLm11c2ljLnZpZC5yZWxvYWRlZGFwcF9zY3JlZW5fMF8xNTIxNjAwNTIwXzAwMg/screen-0.webp?fakeurl=1&type=.webp'
              />
             </Link>
         </div>
-        <div className='col-span-1 px-10'>
+        <div>
+              <h1 className='font-serif font-bold text-3xl'>Manjarie - Best of Everything!</h1>
+          </div>
+        <div className='flex flex-row gap-12'>
+        <div className=''>
         <Link to={"/cart"} >   
             <div className='relative text-2xl font-bold'>
-              Cart
+            <img 
+            className='h-8 mx-3'
+            alt='icon'
+            src={icon}
+            />
             </div>
             </Link> 
         </div>
-        <div className='col-span-1'>
+        <div className=''>
             <img 
             className='h-8'
             alt='user' 
-            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmoGtyISMVoKuWRqAo9KLfl1g84gWVdOvCYk41aKGhUMDKrryDgM3hAYXRmm-Ad1wUaEE' />
+            src= {userIcon} />
+             </div>
         </div>
     </div>
   )

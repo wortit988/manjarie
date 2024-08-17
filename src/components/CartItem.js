@@ -16,7 +16,10 @@ const CartItem = ({id, name, price, description}) => {
             <div className=''>{description}</div>
             <div className="font-semibold">₹ {price}</div>
         </div>
-        <div><button className='bg-green-500 p-2 m-4 rounded-md' onClick={removeItemInfo}>Remove</button></div>
+        <div className='flex items-center justify-end grow'>
+            <div><input /></div>
+            <button className='bg-green-500 p-2 m-4 rounded-md' onClick={removeItemInfo}>Remove</button>
+        </div>
     </div>
 
   )

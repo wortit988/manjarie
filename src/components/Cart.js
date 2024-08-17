@@ -10,20 +10,24 @@ const Cart = () => {
     dispatch(clearCart());
   };
   return (
-    <div className="pb-60" >
-      <h1 className="font-bold text-3xl"> Cart Items - {cartItems.length}</h1>
+    <div className="pb-60 flex flex-row" >
+      {/* <h1 className="font-bold text-3xl"> Cart Items - {cartItems.length}</h1>
       <button
         className="bg-green-100 p-2 m-5"
         onClick={() => handleClearCart()}
       >
         Clear Cart
-      </button>
-
+      </button> */}
+      <div className ='ml-1'>
       {cartItems.map((cartItem) => {
                 return (
                     <CartItem key={cartItem.id} {...cartItem}/>
                 )
             })}
+    </div>
+    <div>
+        Cart Summary
+      </div>
     </div>
   )
 }
