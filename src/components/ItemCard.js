@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../utils/cartSlice';
 import { v4 as uuidv4 } from 'uuid';
