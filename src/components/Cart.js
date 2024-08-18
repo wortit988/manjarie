@@ -26,7 +26,8 @@ const Cart = () => {
             })}
     </div>
     <div>
-        Cart Summary
+        <h1>Price Details</h1>
+        <h1>Price ({cartItems.length} Items) {cartItems.reduce((accumlator, item) => accumlator + item.price, 0)}</h1>
       </div>
     </div>
   )
