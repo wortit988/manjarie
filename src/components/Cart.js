@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  const dispatch = useDispatch();
+ // const dispatch = useDispatch();
   // const handleClearCart = () => {
   //   dispatch(clearCart());
   // };
