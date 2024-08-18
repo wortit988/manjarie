@@ -46,6 +46,7 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.items = [];
       state.totalQuanity = 0;
+      state.subtotal = 0;
     },
     modifyItemQuantity: (state, action) => {
       const { updatedQuantity, uniqueKey } = action.payload;
