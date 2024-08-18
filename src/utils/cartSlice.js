@@ -21,20 +21,31 @@ const cartSlice = createSlice({
       state.subtotal += action.payload.price;
     },
     removeItem: (state, action) => {
-      let quantityToRemove = 0;
-      let itemPrice = 0;
-      state.items = state.items.filter((item) => {
-        if (item.uniqueKey !== action.payload) {
-          quantityToRemove = item.quantity;
-          itemPrice = item.price;
-          return true;
-        }
-      });
-      state.totalQuanity = state.totalQuanity - quantityToRemove;
-      state.subtotal = state.subtotal - quantityToRemove * itemPrice;
+      // let quantityToRemove = 0;
+      // let itemPrice = 0;
+      // state.items = state.items.filter((item) => {
+      //   if (item.uniqueKey !== action.payload) {
+      //     quantityToRemove = item.quantity;
+      //     itemPrice = item.price;
+      //     return true;
+      //   }
+      // });
+      // state.totalQuanity = state.totalQuanity - quantityToRemove;
+      // state.subtotal = state.subtotal - quantityToRemove * itemPrice;
+      const itemToRemove = state.items.find(item => item.uniqueKey === action.payload);
+  
+      if (itemToRemove) {
+        // Remove the item from the array
+        state.items = state.items.filter(item => item.uniqueKey !== action.payload);
+    
+        // Update total quantity and subtotal
+        state.totalQuanity -= itemToRemove.quantity;
+        state.subtotal -= itemToRemove.quantity * itemToRemove.price;
+      }
     },
     clearCart: (state) => {
       state.items = [];
+      state.totalQuanity = 0;
     },
     modifyItemQuantity: (state, action) => {
       const { updatedQuantity, uniqueKey } = action.payload;

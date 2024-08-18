@@ -40,7 +40,9 @@ const CartItem = ({
               itemQty <= 1 ? "text-gray-400" : ""
             }`}
             onClick={() => {
+              if(itemQty>1){
               modifyQuantity(parseInt(itemQty) - 1);
+              }
             }}
           >
             {" "}

@@ -1,6 +1,23 @@
 import React from "react";
+import { useState } from "react";
+import Modal from "./modal/Modal";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../utils/cartSlice";
 
 const CartSummary = ({ cartItems, totalQuanity, subtotal }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => {
+    dispatch(clearCart());
+    setModalOpen(false)
+  };
+  const onBuyClick = () => {
+    openModal();
+  };
+
   return (
     <div className="bg-slate-300 rounded-lg	p-4 grow items-center h-max">
       <h1 className="font-bold text-center text-2xl">Cart Summary</h1>
@@ -15,8 +32,19 @@ const CartSummary = ({ cartItems, totalQuanity, subtotal }) => {
         </div>
       </div>
       <div className=" bg-orange-500 border p-2 text-center rounded-lg self-end">
-        <h4 className="text-sm	">Proceed to buy</h4>
+        <h4 className="text-sm cursor-pointer" onClick={onBuyClick}>Proceed to buy</h4>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <div className="flex flex-col gap-5 h-40vh justify-between items-center">
+          <h3 className="font-medium">Order Placed Successfully!</h3>
+          <button
+            onClick={closeModal}
+            className="border-solid	border-2 border-orange p-2 rounded-md font-semibold w-full"
+          >
+            Continue Shopping
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 };
