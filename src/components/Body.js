@@ -29,7 +29,7 @@ const Body = () => {
   }
 
   return (
-    <div className="flex flex-wrap pb-60 justify-center">
+    <div className="flex flex-wrap pb-24 justify-center">
       {productList.map((item) => {
         return <ItemCard key={item.id} {...item} />;
       })}

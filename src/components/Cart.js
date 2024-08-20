@@ -13,7 +13,7 @@ const Cart = () => {
   return (
     <>
       {cartItems.length ? (
-        <div className="pb-60 flex flex-row p-10 gap-8">
+        <div className="pb-24 flex flex-row p-10 gap-8">
           <div className="ml-1 w-8/12">
             {cartItems.map((cartItem) => {
               return <CartItem key={cartItem.id} {...cartItem} />;
