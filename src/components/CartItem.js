@@ -67,11 +67,13 @@ const CartItem = ({
           </button>
         </div>
         <button
-          className="bg-red-300 p-2 m-4 rounded-md"
+          className="bg-red-500 hover:bg-red-600 text-white p-2 m-4 rounded-md"
           onClick={removeItemInfo}
         >
           Remove
         </button>
+
+
       </div>
     </div>
   );
