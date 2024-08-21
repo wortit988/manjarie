@@ -1,7 +1,6 @@
 import React from "react";
 import ItemCard from "./ItemCard";
 import { itemList } from "../assets/itemList";
-import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const Body = () => {
